@@ -4,7 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import AppNav from './app-nav/app-nav';
-import DashboardContainer from './dashboard/dashboard-container';
+import DashboardContainer from './common/dashboard/dashboard-container';
+import HomeContainer from './home/home-container';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,8 +37,7 @@ const RUOutInTechRoutes = ( { match } ) => {
             <Switch>
                 <Route
                     routName="home"
-                    componenent={DashboardContainer}
-                    render={() => <DashboardContainer text={'Hello from home'} />}
+                    render={() => <HomeContainer />}
                     path={`${match.path}home`}
                 />
                 <Route
