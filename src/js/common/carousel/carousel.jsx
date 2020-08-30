@@ -15,6 +15,7 @@ const useStyles = makeStyles( theme => ({
       gridTemplateColumns: `repeat( ${numCols}, 350px)`,
       gridGap: theme.spacing( 8 ),
     },
+    paddingTop: theme.spacing( 15 )
   })
 }));
 

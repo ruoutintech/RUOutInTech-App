@@ -1,8 +1,10 @@
 import red from '@material-ui/core/colors/red';
+import grey from '@material-ui/core/colors/grey'
 
 export const RUOutInTechTheme = {
     palette: {
         primary: red,
+        secondary: grey,
     },
     breakpoints: {
         values: {

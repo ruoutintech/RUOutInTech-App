@@ -6,9 +6,12 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles( theme => ({
   root: {
     maxWidth: 345,
+    height: '400px',
+    textAlign: 'center',
+    boxShadow: `0px 2px 5px ${theme.palette.secondary.main}`
   },
   media: {
     height: 'auto',
@@ -17,7 +20,7 @@ const useStyles = makeStyles({
     marginRight: 'auto',
     width: '50%',
   },
-});
+}));
 
 export default function MediaCard({
   img,
@@ -27,7 +30,7 @@ export default function MediaCard({
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} >
       <CardActionArea>
         <CardMedia
           className={classes.media}

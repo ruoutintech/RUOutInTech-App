@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { NavLink } from 'react-router-dom';
 
@@ -79,10 +79,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AppNav = () => {
+const AppNav = ( { match } ) => {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+
+  const [path, setPath] = useState( '/ Home' )
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -137,7 +139,7 @@ const AppNav = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Out in Tech RU
+            { `Out in Tech RU ${path}` }
           </Typography>
         </Toolbar>
       </AppBar>
@@ -183,6 +185,7 @@ const AppNav = () => {
                       component={NavLinkWithRef}
                       key={cur.text}
                       to={url}
+                      onClick={ () => setPath( '/ ' + cur.text )}
                   >
                     <ListItemIcon>
                       {Icon}
@@ -214,6 +217,7 @@ const AppNav = () => {
                       component={NavLinkWithRef}
                       key={cur.text}
                       to={url}
+                      onClick={ () => setPath( '/ ' + cur.text )}
                   >
                     <ListItemIcon>
                       {Icon}

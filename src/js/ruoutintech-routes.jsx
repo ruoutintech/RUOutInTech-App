@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
   },
 }));
 
@@ -31,7 +30,7 @@ const RUOutInTechRoutes = ( { match } ) => {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppNav />
+      <AppNav match={match} />
       <main className={classes.content}>
         <div className={classes.toolbar} />
             <Switch>
